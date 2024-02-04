@@ -1,6 +1,6 @@
 import { CustomerService } from '../../Services/customer.service';
 import { CommonModule } from '@angular/common';
-import { Customer, Representative } from '../../Model/customer';
+import { Customer } from '../../Model/customer';
 
 import { Component } from '@angular/core';
 
