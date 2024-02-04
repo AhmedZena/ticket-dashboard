@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 
-<!-- @if (showSpinner){ -->
-<!-- <app-spinner-overlay></app-spinner-overlay> -->
-<!-- } @else{ -->
+@if (showSpinner){
+<app-spinner-overlay></app-spinner-overlay>
+} @else{
 <router-outlet></router-outlet>
-<!-- } -->
+}
