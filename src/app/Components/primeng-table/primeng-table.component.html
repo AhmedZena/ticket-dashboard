@@ -1,0 +1,212 @@
+<div class="card">
+
+  <div class="search-filter-dropdown">
+    <div class="search-filter-container">
+      <!-- search by name  -->
+      <div class="search-container">
+        <p class="search-title">مبيعات التذاكر</p>
+
+        <div class="search-input-container">
+          <i class=" pi pi-search" (click)="searchByName()"></i>
+          <input type="text" class="search-input" placeholder="بحث عن ..." [(ngModel)]="searchQuery"
+            (input)="searchByName()" />
+
+        </div>
+      </div>
+
+
+      <div class="filter-container">
+        <button class="icon-button">
+          <i class="pi pi-filter"></i>
+        </button>
+
+
+        <button class="sort-button" (click)="toggleSort()">
+          <i class="pi" [ngClass]="{'pi-sort-amount-up': isAscending, 'pi-sort-amount-down': !isAscending}"></i>
+        </button>
+      </div>
+
+
+    </div>
+
+    <div class="filter-dropdown">
+      <p-inputSwitch [(ngModel)]="inputToggled" class="custom-switch">
+      </p-inputSwitch>
+
+      مفعلة
+      <p-button label="حجز تذكرة جديدة"
+        class="p-button-rounded p-button-outlined p-button-help p-button-lg "></p-button>
+    </div>
+  </div>
+  <p-table #dt [value]="customers" [(selection)]="selectedCustomers" dataKey="id" [rowHover]="true" [rows]=rows
+    [totalRecords]="totalRecords" [showCurrentPageReport]="true" [rowsPerPageOptions]="rowsPerPageOptions"
+    [loading]="loading" [filterDelay]="0" [globalFilterFields]="['name', 'ticketNum','status']" [sortField]="sortField">
+
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="min-width:8rem">
+          <div class="head-title">
+            #
+          </div>
+        </th>
+        <th pSortableColumn="name" style="min-width: 14rem">
+          <div class="head-title">
+            المستخدم
+            <i class="pi pi-sort-alt"></i>
+          </div>
+        </th>
+        <th style="min-width: 10rem">
+          <div class="head-title">
+            رقم التذكرة
+          </div>
+        </th>
+        <th pSortableColumn="ticketPrice" style="min-width: 12rem">
+          <div class="head-title">
+            قيمة التذكرة
+            <!-- <p-sortIcon field="ticket.price"></p-sortIcon> -->
+            <i class="pi pi-sort-alt"></i>
+          </div>
+        </th>
+        <th style="min-width: 24rem">
+          <div class="head-title">
+            السينمات
+          </div>
+        </th>
+        <th style="min-width: 10rem">
+          <div class="head-title">
+            عدد الأشخاص
+          </div>
+        </th>
+        <th style="min-width: 14rem">
+          <div class="head-title">
+            عدد مرات الشراء
+          </div>
+        </th>
+        <th style="min-width: 16rem">
+          <div class="head-title">
+            التذكرة
+          </div>
+        </th>
+      </tr>
+    </ng-template>
+
+    <!-- ticket: {
+    number: 'C-101',
+    price: 40,
+    number_of_seats: 1,
+    number_of_tickets: 1,
+    link: 'تذكرة رقم 101.pdf',
+    size: '7.3 MB',
+    type: 'PDF',
+    discount: 25,
+    expired: '15 يوليو 2023',
+    }, -->
+    <ng-template pTemplate="body" let-customer let-rowIndex="rowIndex">
+      <tr class="p-selectable-row">
+        <td>
+          <span class="p-column-title">#</span>
+          {{rowIndex + 1}}
+        </td>
+        <td>
+          <span class="p-column-title">Representative</span>
+          <div class="customer-info">
+            <img [alt]="customer.name" [src]="customer.imgSrc" class="rounded-image" />
+            <!-- <p class="p-column-title">Name</p> -->
+            <span class="name-phone">
+              <span>
+                <span class="span-name">{{customer.name}}</span>
+                <br>
+                <span>{{customer.phone}}</span>
+              </span>
+            </span>
+          </div>
+        </td>
+
+        <td>
+          <span class="p-column-title">Ticket</span>
+
+          <span class="ml-1 vertical-align-middle">{{ customer.ticket.number }}</span>
+        </td>
+        <td>
+          <span class="p-column-title">Representative</span>
+
+          <span
+            class="ml-1 vertical-align-middle">{{ customer.ticket.price  | currency: 'USD':'symbol': '1.0-0' }}</span>
+        </td>
+        <td>
+          <span class="p-column-title">Date</span>
+          <!-- {{ customer.date | date: 'MM/dd/yyyy' }} -->
+          {{ customer.cinema.locations | stringifyArray }}
+        </td>
+        <td>
+          <span class="p-column-title">ticket</span>
+          {{ customer.ticket.number_of_seats }}
+
+
+        </td>
+        <td>
+          <span class="p-column-title">purched num</span>
+          {{ customer.ticket.number_of_tickets | translateNumber }}
+        </td>
+
+        <td style="text-align: center">
+          <div class="ticket-download-info">
+            <button class="ticket-button">
+              <img src="assets/images/ticket-icon.png" class="ticket-icon-image" />
+            </button>
+
+            <div>
+              <p>
+                <span class="ticket-info">تذكرة رقم {{ customer.ticket.number }}</span>
+              </p>
+              <p class="ticket-info-container">
+                <span class="ticket-info"> {{ customer.ticket.size }}</span>
+                .
+                <span class="ticket-info"> {{ customer.ticket.type }}</span>
+              </p>
+
+            </div>
+            <button>
+              <i class="pi pi-download"></i>
+            </button>
+          </div>
+
+        </td>
+      </tr>
+    </ng-template>
+
+    <!-- <ng-template pTemplate="footer">
+      <tr>
+        <td colspan="8">
+          <p-paginator [rows]="rows" [totalRecords]="totalRecords" [rowsPerPageOptions]="rowsPerPageOptions"
+            (onPage)="onPaginate($event)"></p-paginator>
+        </td>
+      </tr>
+    </ng-template> -->
+  </p-table>
+  <ng-template pTemplate="emptymessage">
+    <tr>
+      <td colspan="8">No customers found.</td>
+    </tr>
+  </ng-template>
+  <div class="paginator-container">
+
+    <p class="paginator-info">
+      <span>عرض</span>
+      <select class="rows-select" [(ngModel)]="rows" (change)="onPaginate($event)">
+        <!-- <option *ngFor="let option of rowsPerPageOptions" [value]="option">{{option}}</option> -->
+        @for (option of rowsPerPageOptions ; track $index){
+        <option [value]="option">{{option}}</option>
+        }
+      </select>
+      <span>من اصل </span>
+      <span>{{totalRecords}}</span>
+    </p>
+    <p-paginator [rows]="rows" [totalRecords]="120" class="custom-paginator"></p-paginator>
+  </div>
+
+</div>
+
+<style>
+
+</style>

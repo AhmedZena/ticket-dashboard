@@ -1,0 +1,49 @@
+.chart {
+  background-color: white;
+  padding: 10px;
+
+  .stats-container {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin: 0;
+
+    .stats-header {
+      display: block;
+      padding: 10px;
+
+      .date-range {
+        color: #99A1B7;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+    }
+
+    .period-button {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      button {
+        border: none;
+        background-color: #FAFAFA;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 5px;
+        cursor: pointer;
+        // font-weight: bold;
+        font-size: 1.2rem;
+
+        &:hover {
+          background-color: #EAEAEA;
+        }
+      }
+    }
+  }
+
+  .apx-chart {
+    width: 100px !important;
+    height: 100px !important;
+  }
+}

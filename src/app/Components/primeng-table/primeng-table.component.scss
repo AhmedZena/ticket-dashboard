@@ -1,0 +1,357 @@
+$color1: #f3f5f7;
+$color2:white;
+$bg-color1: #8a74f9;
+$bg-color2: #f3f5f7;
+
+$bg-color3: #d8d0ff;
+
+:host ::ng-deep {
+
+  .p-button {
+    background-color: $bg-color1;
+    border-color: $bg-color1;
+  }
+
+  .p-button:hover {
+    background-color: $color1;
+    // border-color: $color1;
+    color: $bg-color1;
+    font-weight: bold;
+  }
+
+  .custom-switch .p-inputswitch.p-component .p-inputswitch-slider {
+    background-color: $bg-color1;
+    /* Your desired color */
+  }
+
+  .custom-switch .p-inputswitch.p-component.p-inputswitch-checked .p-inputswitch-slider {
+    background-color: $bg-color3
+  }
+
+
+
+  .card {
+    margin-top: 20px;
+
+    .search-filter-dropdown {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .search-filter-container {
+      display: flex;
+
+      justify-content: right;
+      align-items: center;
+      gap: 10px;
+
+      .filter-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        button {
+          padding: 12px;
+          background-color: white;
+          border: 1px solid #ccc;
+          color: gray;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $bg-color1;
+            color: $color2;
+          }
+        }
+      }
+    }
+
+    .filter-dropdown {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+
+      .p-button {
+        padding: 12px;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  .p-paginator {
+    .p-paginator-current {
+      margin-left: auto;
+    }
+  }
+
+  .table-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .head-title {
+    font-size: 1.0rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    color: #ABAAB1;
+
+  }
+
+  .p-w-100 {
+    width: 100%;
+  }
+
+  .p-selectable-row {
+    cursor: pointer;
+    text-align: right;
+
+    td {
+      text-align: center;
+      padding: 10px;
+      margin: 0 10px;
+    }
+
+  }
+
+  /* Responsive */
+  .p-datatable-customers .p-datatable-tbody>tr>td .p-column-title {
+    display: none;
+  }
+
+
+  .customer-info {
+    display: flex;
+    align-items: center;
+
+
+    .rounded-image {
+      width: 40px;
+      height: 40px;
+      vertical-align: middle;
+      border-radius: 50%;
+      border: 1px solid black
+    }
+
+    .name-phone {
+      display: block;
+      margin-right: 10px;
+      color: gray;
+
+      .span-name {
+        font-weight: bold;
+      }
+    }
+
+  }
+
+  .ticket-download-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .ticket-info-container {
+      direction: ltr;
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px 5px;
+      border-radius: 5px;
+      background-color: $color2;
+      color: $bg-color1;
+      border: 3px solid $bg-color1;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: $bg-color1;
+        color: $color2;
+
+      }
+
+
+    }
+
+
+    .ticket-button:hover .ticket-icon-image {
+      filter: brightness(0) invert(1);
+    }
+
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+
+  /* */
+  .search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Add more styling as needed */
+
+    .search-title {
+      font-size: 1.6rem;
+      font-weight: bold;
+    }
+
+    .search-input-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background-color: white;
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+
+      /* Add more styling as needed */
+
+      .search-input {
+        padding: 8px;
+        // border: 1px solid #ccc;
+        border: none;
+        border-radius: 4px;
+        /* Add more styling as needed */
+      }
+    }
+  }
+
+
+  .search-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    /* Add more styling as needed */
+  }
+
+  .search-button:hover {
+    background-color: #0056b3;
+  }
+
+
+
+  .filter-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    /* Add more styling as needed */
+  }
+
+  .filter-button:hover {
+    background-color: #218838;
+  }
+
+
+}
+
+.paginator-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.4rem;
+  background-color: white;
+  padding: 1rem 1.2rem;
+}
+
+.paginator-info {
+  display: flex;
+  align-items: center;
+
+  select {
+    margin: 0 0.5rem;
+    padding: 0.8rem;
+    border-radius: 0.3rem;
+    border: 1px solid #d1d1d1;
+    cursor: pointer;
+  }
+
+  span {
+    margin: 0 0.5rem;
+  }
+}
+
+
+
+@media screen and (max-width: 960px) {
+  :host ::ng-deep {
+    .p-datatable {
+      &.p-datatable-customers {
+
+        .p-datatable-thead>tr>th,
+        .p-datatable-tfoot>tr>td {
+          display: none !important;
+        }
+
+        .p-datatable-tbody>tr {
+          border-bottom: 1px solid var(--layer-2);
+
+          >td {
+            text-align: left;
+            // width: 100%;
+            display: flex;
+            align-items: center;
+            border: 0 none;
+
+            .p-column-title {
+              min-width: 30%;
+              display: inline-block;
+              font-weight: bold;
+            }
+
+            p-progressbar {
+              width: 100%;
+            }
+
+            &:last-child {
+              border-bottom: 1px solid var(--surface-d);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .paginator-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .paginator-info {
+    margin-bottom: 0.5rem;
+  }
+
+  .search-filter-dropdown {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+
+  .search-filter-container {
+    // smaller
+    font-size: 0.5rem;
+
+    .search-title {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .filter-container {
+      button {
+        padding: 8px;
+      }
+    }
+  }
+}

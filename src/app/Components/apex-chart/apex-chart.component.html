@@ -1,0 +1,29 @@
+<div class="chart">
+
+  <div class="stats-container">
+    <div class="stats-header">
+      <h4 class="stats-title">
+        إحصائيات إستخدام القسيمة
+      </h4>
+      <p class="date-range">
+        05 يوليو , 2023 - 05 أغسطس , 2023 <i class="pi pi-angle-down"></i>
+      </p>
+    </div>
+
+    <div class="period-button">
+      <button>
+        سنويا
+        <i class="pi pi-angle-down"></i>
+      </button>
+    </div>
+  </div>
+
+
+  <apx-chart [chart]="chartOptions.chart!" [series]="chartOptions.series!" [xaxis]="chartOptions.xaxis!"
+    [title]="chartOptions.title!" [subtitle]="chartOptions.subtitle!" [labels]="chartOptions.labels!"
+    [colors]="chartOptions.colors!" [legend]="chartOptions.legend!" [dataLabels]="chartOptions.dataLabels!"
+    styleClass="apx-chart">
+  </apx-chart>
+
+
+</div>

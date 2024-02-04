@@ -1,0 +1,70 @@
+// menubar-styles.scss
+
+:host ::ng-deep .p-menubar {
+  border: 1px #8a74f9 solid;
+  border-style: solid;
+  border-radius: 20px;
+  box-shadow: 0px 4px 6px 0px #8a74f9;
+}
+
+:host ::ng-deep .p-menuitem {
+  // background-color: #8a74f9;
+  margin: 12px;
+  padding: 12px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f3f5f7;
+    color: #8a74f9;
+    font-weight: bold;
+    border-radius: 20px;
+    box-shadow: 0px 4px 6px 0px #8a74f9;
+  }
+}
+
+// :host ::ng-deep .p-menuitem:hover {
+//   background-color:
+//   color: white;
+//   font-weight: bold;
+//   border-radius: 20px;
+//   box-shadow: 0px 4px 6px 0px green;
+// }
+
+.main-navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  // position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  //  color as p-menu
+  background-color: #f8f9fa;
+
+  p-menubar {
+    border: none;
+    padding: 10px;
+    gap: 10px;
+
+
+
+
+
+  }
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  text-align: left;
+  transition: transform 0.5s;
+
+  &:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+
+}

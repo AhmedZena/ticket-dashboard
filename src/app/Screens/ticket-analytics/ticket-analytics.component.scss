@@ -1,0 +1,112 @@
+$color1: #f3f5f7;
+$color2:white;
+$color3: #d9dce0;
+$color4: #E7EAED;
+$bg-color1: #8a74f9;
+$bg-color2: #f3f5f7;
+
+// ::ng-deep .p-dialog-mask {
+//   z-index: 1050;
+// }
+
+.main {
+  margin: 20px;
+  background-color: $color1;
+  // margin-top: 80px;
+  z-index: -2;
+
+
+  .ticket-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    .ticket-info-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      button {
+        color: black;
+        background-color: $color4;
+        border: none;
+        padding: 10px;
+        margin: 10px;
+
+        &:hover {
+          background-color: #c4c7ca;
+          cursor: pointer;
+        }
+      }
+
+
+
+      span {
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+
+    .ticket-info-body {
+
+
+      button {
+        color: black;
+        background-color: white;
+        // radius
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 20px;
+
+
+        &:hover {
+          background-color: $bg-color1;
+          color: white;
+          cursor: pointer;
+
+          i {
+            color: white;
+          }
+        }
+
+        i {
+          margin-right: 5px;
+          color: $bg-color1;
+        }
+      }
+    }
+  }
+
+  .main-container {
+    display: flex;
+    justify-content: space-between;
+
+    app-ticket {
+      width: 38%;
+    }
+
+    app-apex-chart {
+      width: 60%;
+    }
+  }
+
+
+}
+
+
+
+@media (max-width: 768px) {
+
+  .main {
+    .main-container {
+      flex-direction: column;
+
+      app-apex-chart,
+      app-ticket {
+        width: 100%;
+      }
+    }
+  }
+}

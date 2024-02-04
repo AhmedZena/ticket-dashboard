@@ -1,0 +1,170 @@
+$color1: #f3f5f7;
+$color2:white;
+$bg-color1: #8a74f9;
+$bg-color2: #f3f5f7;
+
+
+p-toast {
+  z-index: 1050;
+  /* Assuming navbar has lower z-index */
+}
+
+i {
+  cursor: pointer;
+}
+
+.ticket {
+  // width: 600px;
+  height: 320px !important;
+  background-color: $bg-color1;
+  // margin: 25px auto;
+  position: relative;
+  border-radius: 20px;
+  color: $color2;
+  padding: 15px 5px;
+
+}
+
+
+.info-header-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+  color: $color2;
+  margin: 0 auto;
+
+  i {
+    color: $color2 !important;
+
+  }
+
+  span {
+    flex: 1;
+    text-align: center;
+  }
+}
+
+
+// }
+.info-body {
+  display: flex;
+  padding: 25px;
+  background-color: $color2;
+  border-radius: 10px;
+  padding: 14px;
+  width: 70%;
+  justify-content: space-evenly;
+  text-align: center;
+  margin: 0 auto;
+}
+
+
+.info-body input {
+  width: 70%;
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.info i {
+  font-size: 20px;
+  color: $bg-color1;
+}
+
+.holes-lower {
+  position: relative;
+  margin: 25px;
+  border: 1px dashed $color2;
+  border-radius: 20px;
+  top: -3%;
+
+
+  &:before {
+    content: "";
+    height: 50px;
+    width: 50px;
+    background-color: $bg-color2;
+    position: absolute;
+    border-radius: 50%;
+    top: -25px;
+    // top: 10%;
+    left: -50px;
+  }
+
+  &:after {
+    content: "";
+    height: 50px;
+    width: 50px;
+    background-color: $bg-color2;
+    position: absolute;
+    border-radius: 50%;
+    top: -25px;
+    // top: 10%;
+    // left: 550px;
+    left: 100%;
+  }
+}
+
+.info-footer {
+  text-align: center;
+}
+
+.info-second {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  padding: 5px 20px;
+  color: $color2;
+  font-size: 20px;
+
+  .discount {
+
+
+    p {
+      padding: 0;
+      text-align: right;
+    }
+
+    .share-btn {
+      background-color: $bg-color1;
+      border: 2px solid $bg-color1;
+      border-color: $color2;
+      color: $color2;
+      padding: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-right: 10px;
+
+      text-align: center;
+
+      i {
+        // make it as mirror
+        transform: scaleX(-1);
+
+      }
+
+      &:hover {
+        background-color: $color2;
+        color: $bg-color1;
+      }
+    }
+
+  }
+}
+
+
+
+.qr-code {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 0px;
+  // .qr {
+  //   border-radius: 10px;
+  // }
+
+}
