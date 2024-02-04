@@ -224,35 +224,6 @@ $bg-color3: #d8d0ff;
   }
 
 
-  .search-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    /* Add more styling as needed */
-  }
-
-  .search-button:hover {
-    background-color: #0056b3;
-  }
-
-
-
-  .filter-button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    /* Add more styling as needed */
-  }
-
-  .filter-button:hover {
-    background-color: #218838;
-  }
 
 
 }
@@ -286,43 +257,6 @@ $bg-color3: #d8d0ff;
 
 
 @media screen and (max-width: 960px) {
-  :host ::ng-deep {
-    .p-datatable {
-      &.p-datatable-customers {
-
-        .p-datatable-thead>tr>th,
-        .p-datatable-tfoot>tr>td {
-          display: none !important;
-        }
-
-        .p-datatable-tbody>tr {
-          border-bottom: 1px solid var(--layer-2);
-
-          >td {
-            text-align: left;
-            // width: 100%;
-            display: flex;
-            align-items: center;
-            border: 0 none;
-
-            .p-column-title {
-              min-width: 30%;
-              display: inline-block;
-              font-weight: bold;
-            }
-
-            p-progressbar {
-              width: 100%;
-            }
-
-            &:last-child {
-              border-bottom: 1px solid var(--surface-d);
-            }
-          }
-        }
-      }
-    }
-  }
 
   .paginator-container {
     flex-direction: column;
